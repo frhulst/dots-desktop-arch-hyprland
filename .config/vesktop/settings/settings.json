@@ -103,7 +103,8 @@
         "BetterSettings": {
             "enabled": true,
             "disableFade": true,
-            "eagerLoad": true
+            "eagerLoad": true,
+            "organizeMenu": true
         },
         "BetterUploadButton": {
             "enabled": false
@@ -249,7 +250,7 @@
         "ImageZoom": {
             "enabled": true,
             "size": 100,
-            "zoom": 4.7,
+            "zoom": 1.1000000000000005,
             "saveZoomValues": true,
             "nearestNeighbour": false,
             "square": false,
@@ -475,8 +476,10 @@
         },
         "ShikiCodeblocks": {
             "enabled": true,
-            "useDevIcon": "GREYSCALE",
-            "theme": "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/2d87559c7601a928b9f7e0f0dda243d2fb6d4499/packages/tm-themes/themes/dark-plus.json"
+            "useDevIcon": "COLOR",
+            "theme": "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/2d87559c7601a928b9f7e0f0dda243d2fb6d4499/packages/tm-themes/themes/tokyo-night.json",
+            "tryHljs": "SECONDARY",
+            "bgOpacity": 100
         },
         "ShowAllMessageButtons": {
             "enabled": false
@@ -593,7 +596,9 @@
             "enabled": false
         },
         "VoiceMessages": {
-            "enabled": true
+            "enabled": true,
+            "echoCancellation": true,
+            "noiseSuppression": true
         },
         "VolumeBooster": {
             "enabled": true,
@@ -658,6 +663,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1757448661537
+        "settingsSyncVersion": 1760301576319
     }
 }

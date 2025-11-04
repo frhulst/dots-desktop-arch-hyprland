@@ -40,7 +40,6 @@ return {
   },
   { "elkowar/yuck.vim" },
   { "xiyaowong/transparent.nvim" },
-
   -- {
   --   "glebzlat/arduino-nvim",
   --   config = {
