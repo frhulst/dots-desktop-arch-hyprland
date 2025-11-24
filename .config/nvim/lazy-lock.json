@@ -1,4 +1,5 @@
 {
+  "Arduino-Nvim": { "branch": "main", "commit": "fba550deef2acf2b400927e82775d5139c56615f" },
   "AstroNvim": { "branch": "main", "commit": "8379e70578bb2f4b2227d55ccc1ae4fd2ab8bb51" },
   "LuaSnip": { "branch": "master", "commit": "458560534a73f7f8d7a11a146c801db00b081df0" },
   "aerial.nvim": { "branch": "master", "commit": "6ab1a0ce4874d21610fc5a67a6c82c7b943c635b" },
@@ -12,7 +13,6 @@
   "blink.compat": { "branch": "main", "commit": "2ed6d9a28b07fa6f3bface818470605f8896408c" },
   "cmp-dap": { "branch": "master", "commit": "ea92773e84c0ad3288c3bc5e452ac91559669087" },
   "copilot.lua": { "branch": "master", "commit": "af3114aeb915beb14fcbc46849c7b08a5e3e2c1a" },
-  "easy-dotnet.nvim": { "branch": "main", "commit": "e9cf21828228b30bc3c59957c0a1e7898d473767" },
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
   "gitsigns.nvim": { "branch": "main", "commit": "7010000889bfb6c26065e0b0f7f1e6aa9163edd9" },
   "guess-indent.nvim": { "branch": "main", "commit": "84a4987ff36798c2fc1169cbaff67960aed9776f" },

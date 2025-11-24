@@ -40,11 +40,4 @@ return {
   },
   { "elkowar/yuck.vim" },
   { "xiyaowong/transparent.nvim" },
-  -- {
-  --   "glebzlat/arduino-nvim",
-  --   config = {
-  --     function() require("arduino-nvim").setup() end,
-  --     filetype = "arduino",
-  --   }
-  -- },
 }
