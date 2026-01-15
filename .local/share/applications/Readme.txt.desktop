@@ -1,0 +1,24 @@
+[Desktop Entry]
+Categories=
+Comment=Readme file
+Comment[en]=Readme file
+Encoding=UTF-8
+Exec=/home/maskop/STMicroelectronics/STM32Cube/STM32CubeProgrammer/util/Readme.txt
+GenericName=
+GenericName[en]=
+Icon=
+MimeType=
+Name=Readme.txt
+Name[en]=Readme.txt
+Path=
+ServiceTypes=
+SwallowExec=
+SwallowTitle=
+Terminal=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=root
+
+# created by com.izforge.izpack.util.os.Unix_Shortcut $Revision$
+# $Id$

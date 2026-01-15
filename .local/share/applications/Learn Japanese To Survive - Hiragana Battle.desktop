@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Learn Japanese To Survive - Hiragana Battle
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/438270
+Icon=steam_icon_438270
+Terminal=false
+Type=Application
+Categories=Game;

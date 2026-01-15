@@ -35,9 +35,18 @@ return {
   {
     "swaits/universal-clipboard.nvim",
     opts = {
-      verbose = true, -- optional: set true to log detection details
+      verbose = false, -- optional: set true to log detection details
     },
   },
   { "elkowar/yuck.vim" },
   { "xiyaowong/transparent.nvim" },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = function(_, opts)
+  --     local esp32 = require "esp32"
+  --     opts.servers = opts.servers or {}
+  --     opts.servers.clangd = esp32.lsp_config()
+  --     return opts
+  --   end,
+  -- },
 }

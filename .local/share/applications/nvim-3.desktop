@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=nvim
+MimeType=application/octet-stream;
+Name=nvim
+NoDisplay=true
+Type=Application

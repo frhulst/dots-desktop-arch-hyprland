@@ -68,6 +68,7 @@ alias fabric='fabric-ai'
 alias py='python'
 alias gocker='~/.venv-PythonApps/bin/gocker'
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias subextractor='sh ~/.scripts/mkv_sub_extractor.sh'
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall

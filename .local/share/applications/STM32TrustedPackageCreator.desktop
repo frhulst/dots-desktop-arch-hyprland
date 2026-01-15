@@ -1,0 +1,23 @@
+[Desktop Entry]
+Categories=
+Comment=STM32TrustedPackageCreator 2.21.0
+Comment[en]=STM32TrustedPackageCreator 2.21.0
+Exec=/home/maskop/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32TrustedPackageCreator
+GenericName=
+GenericName[en]=
+Icon=/home/maskop/STMicroelectronics/STM32Cube/STM32CubeProgrammer/util/STM32TrustedPackageCreator.ico
+MimeType=
+Name=STM32TrustedPackageCreator
+Name[en]=STM32TrustedPackageCreator
+Path=/home/maskop/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin
+ServiceTypes=
+SwallowExec=
+SwallowTitle=
+Terminal=
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=root
+
+# created by com.izforge.izpack.util.os.Unix_Shortcut $Revision$
+# $Id$

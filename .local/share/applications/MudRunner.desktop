@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=MudRunner
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/675010
+Icon=steam_icon_675010
+Terminal=false
+Type=Application
+Categories=Game;

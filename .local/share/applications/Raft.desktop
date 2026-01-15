@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Raft
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/648800
+Icon=steam_icon_648800
+Terminal=false
+Type=Application
+Categories=Game;
