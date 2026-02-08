@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Untrusted
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/1502660
+Icon=steam_icon_1502660
+Terminal=false
+Type=Application
+Categories=Game;

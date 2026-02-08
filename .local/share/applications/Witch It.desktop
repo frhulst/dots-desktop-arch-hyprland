@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Witch It
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/559650
+Icon=steam_icon_559650
+Terminal=false
+Type=Application
+Categories=Game;
