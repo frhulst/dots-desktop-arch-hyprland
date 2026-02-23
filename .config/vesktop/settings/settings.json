@@ -176,7 +176,7 @@
             "enabled": false
         },
         "FakeNitro": {
-            "enabled": true,
+            "enabled": false,
             "enableStickerBypass": true,
             "enableStreamQualityBypass": true,
             "enableEmojiBypass": true,
@@ -666,7 +666,7 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1769631844786
+        "settingsSyncVersion": 1770922051654
     },
     "uiElements": {
         "chatBarButtons": {},

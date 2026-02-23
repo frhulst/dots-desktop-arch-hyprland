@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Human Fall Flat
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/477160
+Icon=steam_icon_477160
+Terminal=false
+Type=Application
+Categories=Game;
