@@ -7,8 +7,9 @@ Scope {
     model: Quickshell.screens
 
     PanelWindow {
+      id: barWindow
       required property var modelData
-      property string position: "bottom"
+      property string position: "top"
 
       screen: modelData
       
@@ -20,13 +21,13 @@ Scope {
       }
 
       margins {
-        left: 8
-        right: 8
-        bottom: position === "bottom" ? 5 : 0
-        top: position === "top" ? 5 : 0
+        left: Design.fontSize / 3
+        right: Design.fontSize / 3
+        bottom: position === "bottom" ? Design.fontSize / 3 : 0
+        top: position === "top" ? Design.fontSize / 3 : 0
       }
 
-      implicitHeight: 35
+      implicitHeight: Design.fontSize * 2
 
       color: Design.transparent
 
@@ -61,6 +62,8 @@ Scope {
           ClockWidget {}
         }
       }
+
+      
     }
   }
 }

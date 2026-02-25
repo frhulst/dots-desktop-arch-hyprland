@@ -14,7 +14,9 @@ Singleton {
   property color colYellow: "#e0af68"
   property color transparent: "#00000000"
 
-
+  // time format
+  property string timeFormat: "hh:mm:ss"
+  property bool seconds: true
 
   // font settings
   property string fontFamily: "JetBrainsMono Nerd Font"

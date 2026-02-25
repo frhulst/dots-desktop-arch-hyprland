@@ -8,11 +8,19 @@ PopupWindow {
   id: activeApps
   color: Design.transparent
 
+  property var bingus: false
+  visible: bingus
+
+  function toggle() {
+    bingus = !bingus
+    visible = bingus
+  }
+
   property var maxWidth: 600
   property var minWidth: 100
 
   implicitWidth: maxWidth
-  implicitHeight: 400
+  implicitHeight: activeAppsList.contentHeight + 10
 
   property var getMaxWidth: (thisMax, prevMax) => maxWidth = Math.max(thisMax, prevMax)
 
@@ -111,15 +119,16 @@ PopupWindow {
         }
       }
 
+
+      delegate: appDelegate
+
       Component.onCompleted: {
-        console.log(activeApps.clients.length)
+        console.log("nigga 2 " + activeApps.clients.length)
         for (let i = 0; i < activeApps.clients.length; i++) {
           activeApps.maxWidth = Math.max(activeAppsList.itemAtIndex(i), activeApps.maxWidth)
           console.log(activeApps.maxWidth)
         }
       }
-
-      delegate: appDelegate
     }
   }
 }

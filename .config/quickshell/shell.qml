@@ -3,5 +3,5 @@ import QtQuick
 
 Scope {
   Bar {}
-  AppsWorkspaces {}
-}
+  // Screenspace {}
+  }

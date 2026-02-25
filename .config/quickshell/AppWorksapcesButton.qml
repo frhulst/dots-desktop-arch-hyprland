@@ -1,5 +1,6 @@
 import Quickshell
 import QtQuick
+// import "Screenspace.qml"
 
 Rectangle {
   id: popupButton
@@ -22,9 +23,27 @@ Rectangle {
     }
   }
 
+  property var test: false
+
+  AppsWorkspaces {
+    id: appsWorkspaces
+    anchor.window: barWindow
+    anchor.rect.y: 30
+  }
+
+  // Bingus2 {
+  //   id: bingus2
+  // }
+
   MouseArea {
+    anchors.fill: parent
     onClicked: {
-      
+      appsWorkspaces.toggle()
+      // bingus2.toggle()
+      // console.log("Bingus.visible = " + bingus2.visible)
+      console.log("Popup.visible = " + appsWorkspaces.visible)
+      test = !test
+      console.log("test = " + test)
     }
   }
 }
