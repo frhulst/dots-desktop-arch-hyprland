@@ -40,6 +40,7 @@ return {
   },
   { "elkowar/yuck.vim" },
   { "xiyaowong/transparent.nvim" },
+  { "Leon-Degel-Koehn/qmlformat.nvim" },
   -- { "Leon-Degel-Koehn/qmlformat.nvim" },
   -- {
   --   "neovim/nvim-lspconfig",

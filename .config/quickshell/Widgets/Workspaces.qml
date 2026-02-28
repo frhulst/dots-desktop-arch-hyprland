@@ -1,8 +1,7 @@
-import Quickshell
-import Quickshell.Wayland
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
+import qs.Services
 
 
 Rectangle {
@@ -10,8 +9,7 @@ Rectangle {
   
   property var numOfWorkspaces: 10
 
-  Layout.preferredHeight: barRectangle.height
-  Layout.preferredWidth: barRectangle.height * numOfWorkspaces + numOfWorkspaces * 1.5
+  Layout.preferredWidth: this.height * numOfWorkspaces + numOfWorkspaces * 1.5
   color: Design.transparent
 
   
@@ -26,9 +24,15 @@ Rectangle {
     Component {
       id: workspaceRectangle
       Rectangle {
-        implicitWidth: wsPanel.height - 2
-        implicitHeight: wsPanel.height - 2
-        radius: 4
+        id: workspaceContainer
+        implicitWidth: Design.widgetHeight
+        implicitHeight: Design.widgetHeight
+        radius: Design.widgetRadius
+
+        border {
+          width: Design.widgetHeight / 16
+          color: Design.transparent
+        }
 
         property var ws: Hyprland.workspaces.values.find(w => w.id === index + 1)
         property bool isActive: Hyprland.focusedWorkspace?.id === (index + 1)
@@ -48,6 +52,20 @@ Rectangle {
         MouseArea {
           anchors.fill: parent
           onClicked: Hyprland.dispatch("workspace " + (index + 1))
+        }
+
+        HoverHandler {
+          id: mouse
+          acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+          cursorShape: Qt.PointingHandCursor
+
+          onHoveredChanged: {
+            if (hovered) {
+              workspaceContainer.border.color = Design.colBlue
+            } else {
+              workspaceContainer.border.color = Design.transparent
+            }
+          }
         }
       }
     }

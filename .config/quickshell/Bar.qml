@@ -1,6 +1,8 @@
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
+import qs.Widgets
+import qs.Services
 
 Scope {
   Variants {
@@ -27,27 +29,33 @@ Scope {
         top: position === "top" ? Design.fontSize / 3 : 0
       }
 
-      implicitHeight: Design.fontSize * 2
+      implicitHeight: Design.barHeight
 
       color: Design.transparent
 
       Rectangle {
         id: barRectangle
         anchors.fill: parent
-        color: Design.transparent
-        border.width: 0
+        color: "grey"
+        radius: Design.widgetRadius
 
         RowLayout {
           anchors {
-            leftMargin: 12
-            rightMargin: 12
+            left: parent.left
+            rightMargin: Design.barMargins
+            leftMargin: Design.barMargins
             verticalCenter: parent.verticalCenter
           }
           spacing: 10
 
-          AppWorksapcesButton {}
+          AppWorksapcesButton {
+            Layout.preferredHeight: Design.widgetHeight
+            parentWindow: barWindow
+          }
 
-          Workspaces {}
+          Workspaces {
+            Layout.preferredHeight: Design.widgetHeight
+          }
         }
 
         RowLayout {
@@ -59,11 +67,26 @@ Scope {
           }
           spacing: 10
 
-          ClockWidget {}
+          ClockWidget {
+            Layout.preferredHeight: Design.widgetHeight
+          }
+        }
+
+        RowLayout {
+          anchors {
+            verticalCenter: parent.verticalCenter
+            right: parent.right
+            rightMargin: Design.barMargins
+            leftMargin: Design.barMargins
+          }
+          spacing: 10
+          layoutDirection: Qt.RightToLeft
+
+          StatusWidget {
+            Layout.preferredHeight: Design.widgetHeight
+          }
         }
       }
-
-      
     }
   }
 }

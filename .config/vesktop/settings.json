@@ -1,12 +1,7 @@
 {
-    "splashColor": "rgb(220, 220, 223)",
-    "splashBackground": "rgb(0, 0, 0)",
     "discordBranch": "stable",
     "minimizeToTray": true,
     "arRPC": true,
-    "spellCheckLanguages": [
-        "en-US",
-        "en"
-    ],
-    "hardwareVideoAcceleration": false
+    "splashColor": "rgb(220, 220, 223)",
+    "splashBackground": "rgb(0, 0, 0)"
 }

@@ -1,31 +1,38 @@
+//AppsWorkspace.qml
 import Quickshell
 import Quickshell.Io
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
+import qs.Services
 
 PopupWindow {
   id: activeApps
   color: Design.transparent
 
-  property var bingus: false
-  visible: bingus
+  visible: false
+  property var maxWidth: 200
+  property var componentHeight: 40
 
+  // Function to toggle popup on/off
   function toggle() {
-    bingus = !bingus
-    visible = bingus
+    visible = !visible
   }
 
-  property var maxWidth: 600
-  property var minWidth: 100
+  // Function to adopt width to the text
+  function setWidth() {
+    for (let i = 0; i < activeApps.clients.length; i++) {
+      activeApps.maxWidth = Math.max(activeAppsList.itemAtIndex(i).textWidth, activeApps.maxWidth)
+    }
+    componentHeight = activeAppsList.itemAtIndex(0).height
+  }
 
-  implicitWidth: maxWidth
+  implicitWidth: maxWidth + componentHeight + 2*5 + 1
   implicitHeight: activeAppsList.contentHeight + 10
-
-  property var getMaxWidth: (thisMax, prevMax) => maxWidth = Math.max(thisMax, prevMax)
 
   property var clients: []
 
+  // Call to shell to get hypr clients in JSON
   Process {
     id: getClients
     running: true
@@ -33,40 +40,52 @@ PopupWindow {
     stdout: StdioCollector {
       onStreamFinished: {
         activeApps.clients = JSON.parse(this.text)
-        // console.log(clients)
       }
     }
   }
+  
+  // Call to shell to kill a specified window
+  Process {
+    id: killWindow
+    running: false
+
+    property var pid: 0
+
+    command: [ "kill", pid ]
+  }
+
 
   Connections {
     target: Hyprland
     function onRawEvent(ev) {
       if (ev.name === "openwindow" || ev.name === "closewindow") {
-        // console.log("A new window has been opened || Closed!")
         getClients.running = true
+        activeApps.setWidth()
       }
     }
   }
 
   Rectangle {
     id: activeAppsContainer
-    anchors.fill: parent
+    anchors {
+      fill: parent
+    }
     color: Design.colBg
     radius: 8
     visible: true
 
-    implicitWidth: activeAppsList.width
+    implicitWidth: parent.width
     implicitHeight: activeAppsList.height
 
     ListView {
       id: activeAppsList
       anchors {
-        bottom: parent.bottom
         left: parent.left
-        right: parent.right
+        verticalCenter: parent.verticalCenter
+        horizontalCenter: parent.horizontalCenter
       }
       model: activeApps.clients
-      implicitWidth: this.contentWidth
+      implicitWidth: activeApps.maxWidth
       implicitHeight: this.contentHeight
       orientation: Qt.Vertical
       verticalLayoutDirection: ListView.BottomToTop
@@ -76,21 +95,24 @@ PopupWindow {
         id: appDelegate
         RowLayout {
           anchors {
-            horizontalCenter: parent.horizontalCenter
+            left: parent.left
+            right: parent.right
+            margins: 5
           }
-          implicitWidth: parent.width 
+          spacing: 1
+          implicitWidth: parent.width
           implicitHeight: Design.fontSize + 10
 
           Rectangle {
             color: Design.colFg
-            implicitWidth: parent.width 
+            implicitWidth: activeApps.maxWidth
             implicitHeight: parent.height
             radius: 5
             border {
               width: 1
-              color: "black"
+              color: Design.colBg
             }
-            
+
             Text {
               id: text
               text: modelData.workspace.id + ": " + modelData.class + " - " + modelData.title
@@ -108,6 +130,7 @@ PopupWindow {
               }              
             }
 
+
             MouseArea {
               anchors.fill: parent
               onClicked: {
@@ -116,19 +139,49 @@ PopupWindow {
               }
             }
           }
+
+          Rectangle {
+            color: "red"
+            implicitWidth: parent.height
+            implicitHeight: parent.height
+            border {
+              width: 1
+              color: Design.colBg
+            }
+
+            radius: 5
+
+            Text {
+              text: "󰖭"
+              color: Design.colBg
+
+              anchors {
+                verticalCenter: parent.verticalCenter
+                horizontalCenter: parent.horizontalCenter
+              }
+
+              font {
+                family: Design.fontFamily
+                pixelSize: parent.height
+                bold: true
+              }
+            }
+
+            TapHandler {
+              onTapped: {
+                killWindow.pid = modelData.pid
+                killWindow.running = true
+              }
+            }
+          }
+
+          readonly property var textWidth: text.width
         }
       }
 
 
       delegate: appDelegate
 
-      Component.onCompleted: {
-        console.log("nigga 2 " + activeApps.clients.length)
-        for (let i = 0; i < activeApps.clients.length; i++) {
-          activeApps.maxWidth = Math.max(activeAppsList.itemAtIndex(i), activeApps.maxWidth)
-          console.log(activeApps.maxWidth)
-        }
-      }
     }
   }
 }

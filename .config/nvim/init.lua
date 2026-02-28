@@ -18,3 +18,6 @@ end
 require "lazy_setup"
 require "polish"
 require("lspconfig").qmlls.setup {}
+
+local qmlformat = require "qmlformat"
+vim.keymap.set("n", "<leader>m", qmlformat.preview_qmlformat_changes, {})

@@ -21,4 +21,12 @@ Singleton {
   // font settings
   property string fontFamily: "JetBrainsMono Nerd Font"
   property int fontSize: 14
+
+  // bar settings
+  property int barAdd: 4
+  property int widgetsSub: 4
+  property int barHeight: fontSize * 2 + barAdd
+  property int widgetHeight: barHeight - widgetsSub
+  property int barMargins: (barHeight - widgetHeight) / 2
+  property int widgetRadius: fontSize * (2/3)
 }

@@ -1,17 +1,15 @@
 import QtQuick
-import Quickshell
-
+import qs.Services
 
 Rectangle {
   id: clockWidget
   implicitWidth: clockText.width + 10
-  implicitHeight: Design.fontSize * 2
-  radius: 8
+  radius: Design.widgetRadius
 
   color: Design.colBg
   Text {
     id: clockText
-    
+
     anchors {
       horizontalCenter: parent.horizontalCenter
       verticalCenter: parent.verticalCenter
