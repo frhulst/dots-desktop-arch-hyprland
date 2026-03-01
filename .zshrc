@@ -69,6 +69,7 @@ alias subextractor='sh ~/.scripts/mkv_sub_extractor.sh'
 alias pls="sudo !!"
 alias please="sudo !!"
 alias hehe="kill -9 $(ps aux --no-headers | shuf -n 1 | awk '{print $2}')"
+alias clicker='~/clicker.sh'
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
