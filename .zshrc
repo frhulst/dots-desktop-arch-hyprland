@@ -2,7 +2,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="bureau"
-
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 COMPLETION_WAITING_DOTS="true"
@@ -15,17 +14,15 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='vim' # set to your preferred ssh editor
 else
-  export EDITOR='nvim'
+  export EDITOR='nvim' # set to your preferred local editor
 fi
+
+export SUDO_EDITOR=$EDITOR # set to your preferred sudo editor
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
-
-# set sudo editor
-export SUDO_EDITOR="nvim"
-
 
 # SETTING FABRIC 
 # Loop through all files in the ~/.config/fabric/patterns directory
@@ -60,8 +57,8 @@ yt() {
 export OLLAMA_HOME="$HOME/.ollama"
 
 # Set aliases
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias zshconfig="$EDITOR ~/.zshrc"
+alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias "sudoedit"='function _sudoedit(){sudo -e "$1";};_sudoedit'
 alias gowebcam="sudo gopro webcam -a -r 1080 -f linear"
 alias fabric='fabric-ai'
@@ -69,10 +66,13 @@ alias py='python'
 alias gocker='~/.venv-PythonApps/bin/gocker'
 alias dots='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias subextractor='sh ~/.scripts/mkv_sub_extractor.sh'
+alias pls="sudo !!"
+alias please="sudo !!"
+alias hehe="kill -9 $(ps aux --no-headers | shuf -n 1 | awk '{print $2}')"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
-[[ -f /home/maskop/.dart-cli-completion/zsh-config.zsh ]] && . /home/maskop/.dart-cli-completion/zsh-config.zsh || true
+[[ -f ~/.dart-cli-completion/zsh-config.zsh ]] && . ~/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
 fastfetch
